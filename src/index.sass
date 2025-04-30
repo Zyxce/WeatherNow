@@ -1,0 +1,31 @@
+:root
+  --font-primary: 'Inter', sans-serif
+
+/* dark */
+[data-theme='dark']
+  --color-bg: #1e1e2f
+  --color-surface: #2c2c3c
+  --color-card: #333348
+  --color-text-primary: #ffffff
+  --color-text-secondary: #c0c0dd
+  --color-accent: #4db8ff
+  --color-border: #3f3f55
+
+/* light */
+[data-theme='light']
+  --color-bg: #f2f3f7
+  --color-surface: #ffffff
+  --color-card: #e2e6ed
+  --color-text-primary: #1f1f2f
+  --color-text-secondary: #4b4b5c
+  --color-accent: #3c90ff
+  --color-border: #d1d5db
+
+*
+  margin: 0
+  padding: 0
+
+body
+  color: var(--color-text-primary)
+  background-color: var(--color-bg)
+  font-family: var(--font-primary)
