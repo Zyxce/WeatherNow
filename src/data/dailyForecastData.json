@@ -1,0 +1,50 @@
+[
+  {
+    "day": "Monday",
+    "weather": "sunny",
+    "temperature": 22,
+    "feelsLike": 19,
+    "humidity": 45,
+    "wind": 10,
+    "uvIndex": 5,
+    "sunrise": "06:08",
+    "sunset": "07:45",
+    "pressure": 1015
+  },
+  {
+    "day": "Tuesday",
+    "weather": "cloudy",
+    "temperature": 20,
+    "feelsLike": 18,
+    "humidity": 55,
+    "wind": 8,
+    "uvIndex": 3,
+    "sunrise": "06:07",
+    "sunset": "07:46",
+    "pressure": 1013
+  },
+  {
+    "day": "Wednesday",
+    "weather": "rainy",
+    "temperature": 17,
+    "feelsLike": 15,
+    "humidity": 70,
+    "wind": 12,
+    "uvIndex": 2,
+    "sunrise": "06:06",
+    "sunset": "07:47",
+    "pressure": 1009
+  },
+  {
+    "day": "Thursday",
+    "weather": "partly cloudy",
+    "temperature": 21,
+    "feelsLike": 20,
+    "humidity": 50,
+    "wind": 9,
+    "uvIndex": 4,
+    "sunrise": "06:05",
+    "sunset": "07:48",
+    "pressure": 1012
+  }
+]

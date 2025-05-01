@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { toggleLanguage } from '../../store/languageSlice'
 import { RootState, AppDispatch } from '../../store//store'
-import style from './LanguageSwitcher.module.css'
+import style from '../../styles/components/Header/LanguageSwitcher.module.css'
 
 const LanguageSwitcher: React.FC = () => {
   const language = useSelector((state: RootState) => state.language.language)
@@ -19,7 +19,7 @@ const LanguageSwitcher: React.FC = () => {
       className={style.switcher}
       onClick={() => dispatch(toggleLanguage())}
     >
-      {t('test')}
+      {t('header.language')}
     </button>
   )
 }

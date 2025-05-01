@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  font-family: var(--font-primary);
+  transition: color 0.3s, background-color 0.3s;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,6 @@
+.container {
+  padding: 0.3rem 1rem 0 1rem;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: 2fr 1fr 1fr;
+}/*# sourceMappingURL=AdditionalParams.module.css.map */

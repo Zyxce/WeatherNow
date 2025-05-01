@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Header.module.css'
+import style from '../../styles/components/Header/Header.module.css'
 import Logo from './Logo'
 import ThemeSwitcher from './ThemeSwitcher'
 import LanguageSwitcher from './LanguageSwitcher'

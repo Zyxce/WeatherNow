@@ -1,0 +1,6 @@
+.container {
+  padding: 0rem 1rem;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(4, 1fr);
+}/*# sourceMappingURL=DailyForecast.module.css.map */

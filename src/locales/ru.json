@@ -1,3 +1,12 @@
 {
-  "test": "ебать"
+  "header": {
+    "language": "RU",
+    "search": "Поиск"
+  },
+  "todayWeather": {
+    "feelsLike": "Ощущается",
+    "humidity": "Влажность",
+    "wind": "Ветер",
+    "ms": "m/s"
+  }
 }

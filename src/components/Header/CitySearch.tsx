@@ -1,14 +1,20 @@
 import React from 'react'
-import style from './CitySearch.module.css'
+import { useTranslation } from 'react-i18next'
+import { FaSearch } from 'react-icons/fa'
+import style from '../../styles/components/Header/CitySearch.module.css'
 
 const CitySearch: React.FC = () => {
+  const { t } = useTranslation()
   return (
     <form className={style.formContainer}>
-      <input
-        className={style.textField}
-        type="text"
-        placeholder="Search"
-      ></input>
+      <div className={style.inputWrapper}>
+        <FaSearch className={style.searchIcon} />
+        <input
+          className={style.textField}
+          type="text"
+          placeholder={t('header.search')}
+        />
+      </div>
     </form>
   )
 }

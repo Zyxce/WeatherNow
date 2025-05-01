@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo .logoImg {
+  width: 24px;
+  margin-right: 0.3rem;
+}
+.logo .logoText {
+  padding-top: 0.1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}/*# sourceMappingURL=Logo.module.css.map */

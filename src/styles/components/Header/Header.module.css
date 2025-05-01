@@ -1,0 +1,12 @@
+.header {
+  padding: 1rem;
+}
+.header .headerTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.header .headerTop .switchers {
+  display: flex;
+  gap: 0.5rem;
+}/*# sourceMappingURL=Header.module.css.map */

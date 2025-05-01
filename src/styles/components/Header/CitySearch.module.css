@@ -1,0 +1,39 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer .inputWrapper {
+  position: relative;
+  max-width: 100%;
+}
+.formContainer .inputWrapper .searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+.formContainer .inputWrapper .textField {
+  max-width: 100%;
+  padding: 0.2rem 0rem 0.2rem 1.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.formContainer .inputWrapper .textField::-moz-placeholder {
+  color: var(--color-text-secondary);
+}
+.formContainer .inputWrapper .textField::placeholder {
+  color: var(--color-text-secondary);
+}
+.formContainer .inputWrapper .textField:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}/*# sourceMappingURL=CitySearch.module.css.map */

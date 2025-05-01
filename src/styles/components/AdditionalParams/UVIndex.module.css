@@ -1,0 +1,14 @@
+.card {
+  background-color: var(--color-card);
+  border-radius: 0.5rem;
+  text-align: start;
+  padding: 0.5rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .text {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}/*# sourceMappingURL=UVIndex.module.css.map */

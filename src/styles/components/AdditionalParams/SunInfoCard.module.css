@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  background-color: var(--color-card);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+}
+.card .left {
+  text-align: start;
+  padding-right: 0.3rem;
+}
+.card .left .type {
+  font-size: 0.8rem;
+}
+.card .left .time {
+  margin-top: 0.5rem;
+}
+.card .left .time span {
+  font-size: 0.8rem;
+}
+.card .icon {
+  margin: 0 auto;
+  margin-top: auto;
+  width: 2.2rem;
+}/*# sourceMappingURL=SunInfoCard.module.css.map */

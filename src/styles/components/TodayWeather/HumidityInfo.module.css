@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+.container .text {
+  font-size: 0.7rem;
+  margin-right: 0.1rem;
+}
+.container .parameter {
+  font-size: 0.7rem;
+}/*# sourceMappingURL=HumidityInfo.module.css.map */
