@@ -1,0 +1,13 @@
+.footer {
+  padding: 2rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .copyright {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+.footer .developed {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}/*# sourceMappingURL=Footer.module.css.map */

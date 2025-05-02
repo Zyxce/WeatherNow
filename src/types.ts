@@ -10,7 +10,11 @@ export interface ICard {
   sunset: string
   pressure: number
 }
-
+export interface IMoon {
+  day: string
+  moonDay: number
+  phase: string
+}
 export interface ISunInfoCard {
   sunrise: string
 }

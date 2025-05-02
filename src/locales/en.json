@@ -8,5 +8,17 @@
     "humidity": "Humidity",
     "wind": "Wind",
     "ms": "m/s"
+  },
+  "additionalParams": {
+    "pressure": "Pressure",
+    "UV": "UV",
+    "index": "index",
+    "sunrise": "Sunrise"
+  },
+  "moonPhase": {
+    "moonday": "Day"
+  },
+  "footer": {
+    "developedBy": "Developed By"
   }
 }

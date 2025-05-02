@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--color-card);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+}
+.card .day {
+  font-size: 0.6rem;
+}
+.card .icon {
+  width: 2.2rem;
+  margin-top: 0.5rem;
+}
+.card .moonDay {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.card .phase {
+  font-size: 0.6rem;
+  margin: auto 0;
+  color: var(--color-text-secondary);
+}/*# sourceMappingURL=MoonPhaseCard.module.css.map */

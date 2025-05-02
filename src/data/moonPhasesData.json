@@ -1,0 +1,22 @@
+[
+  {
+    "day": "Monday",
+    "moonDay": 12,
+    "phase": "Waxing Gibbous"
+  },
+  {
+    "day": "Tuesday",
+    "moonDay": 13,
+    "phase": "Full Moon"
+  },
+  {
+    "day": "Wednesday",
+    "moonDay": 14,
+    "phase": "Waning Gibbous"
+  },
+  {
+    "day": "Thursday",
+    "moonDay": 15,
+    "phase": "Waning Gibbous"
+  }
+]

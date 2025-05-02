@@ -10,5 +10,7 @@
 }
 .card .text {
   font-size: 0.8rem;
-  white-space: nowrap;
+}
+.card .text span {
+  font-size: 0.63rem;
 }/*# sourceMappingURL=UVIndex.module.css.map */

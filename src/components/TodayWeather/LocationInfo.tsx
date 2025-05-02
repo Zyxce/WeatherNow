@@ -6,10 +6,10 @@ const LocationInfo: React.FC = () => {
     <div className={style.container}>
       <div className={style.locationInfo}>
         <h1 title="City" className={style.city}>
-          New York
+          Moscow
         </h1>
         <p title="Country" className={style.country}>
-          United States
+          Russian Federation
         </p>
       </div>
       <p title="The temperature in degrees Celsius" className={style.temp}>
