@@ -1,17 +1,15 @@
 import React from 'react'
 import style from '../../styles/components/TodayWeather/WeatherIcon.module.css'
+import { IWeatherIconProps } from '../../types'
 import useWeatherIcon from '../../hooks/useWeatherIcon'
 
-interface WeatherIconProps {
-  iconCode?: string
-}
-
-const WeatherIcon: React.FC<WeatherIconProps> = ({ iconCode = '02n' }) => {
-  const icon = useWeatherIcon(iconCode)
+const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
+  const { icon } = props
+  const iconTrue = useWeatherIcon(icon)
 
   return (
     <div className={style.container}>
-      <img className={style.icon} src={icon} alt="weather icon" />
+      <img className={style.icon} src={iconTrue} alt="weather icon" />
     </div>
   )
 }

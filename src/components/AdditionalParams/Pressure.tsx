@@ -1,9 +1,9 @@
 import React from 'react'
-import { IPressure } from '../../types'
+import { IPressureProps } from '../../types'
 import { useTranslation } from 'react-i18next'
 import style from '../../styles/components/AdditionalParams/Pressure.module.css'
 
-const Pressure: React.FC<IPressure> = (props) => {
+const Pressure: React.FC<IPressureProps> = (props) => {
   const { t } = useTranslation()
   const { pressure } = props
   return (

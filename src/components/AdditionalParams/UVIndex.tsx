@@ -1,9 +1,9 @@
 import React from 'react'
-import { IUVIndex } from '../../types'
+import { IUVIndexProps } from '../../types'
 import { useTranslation } from 'react-i18next'
 import style from '../../styles/components/AdditionalParams/UVIndex.module.css'
 
-const UVIndex: React.FC<IUVIndex> = (props) => {
+const UVIndex: React.FC<IUVIndexProps> = (props) => {
   const { t } = useTranslation()
   const { uvIndex } = props
   return (

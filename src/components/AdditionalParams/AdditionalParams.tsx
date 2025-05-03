@@ -3,18 +3,18 @@ import style from '../../styles/components/AdditionalParams/AdditionalParams.mod
 import Pressure from './Pressure'
 import SunInfoCard from './SunInfoCard'
 import UVIndex from './UVIndex'
+import { IAdditionalParamsProps } from '../../types'
 
-import foreCastArr from '../../data/dailyForecastData.json'
-import { ICard } from '../../types'
-
-const AdditionalParams: React.FC = () => {
-  const arr: ICard[] = foreCastArr
-  const today = arr[0]
+const AdditionalParams: React.FC<IAdditionalParamsProps> = (props) => {
+  const { arr } = props
   return (
     <div className={style.container}>
-      <SunInfoCard sunrise={today.sunrise} />
-      <Pressure pressure={today.pressure} />
-      <UVIndex uvIndex={today.uvIndex} />
+      <SunInfoCard
+        sunrise={arr.sunInfoCard.sunrise}
+        sunset={arr.sunInfoCard.sunset}
+      />
+      <Pressure pressure={arr.pressure.pressure} />
+      <UVIndex uvIndex={arr.uvIndex.uvIndex} />
     </div>
   )
 }

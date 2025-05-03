@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useThemeAutoEffect } from './hooks/useThemeAutoEffect'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from './store/store'
+import { useAppDispatch, useAppSelector } from './hooks/reduxHooks'
+import { fetchWeather } from './store/weatherSlice'
+import { ITodayWeather, IAdditionalParams } from './types'
 import Header from './components/Header/Header'
 import TodayWeather from './components/TodayWeather/TodayWeather'
 import AdditionalParams from './components/AdditionalParams/AdditionalParams'
@@ -11,17 +12,60 @@ import Footer from './components/Footer/Footer'
 import './styles/components/App.css'
 
 const App: React.FC = () => {
-  const theme = useSelector((state: RootState) => state.theme.theme)
+  const theme = useAppSelector((state) => state.theme.theme)
+  const { data, loading, error } = useAppSelector((state) => state.weather)
+  const dispatch = useAppDispatch()
   useThemeAutoEffect()
+  useEffect(() => {
+    dispatch(fetchWeather('Moscow'))
+  }, [dispatch])
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
+  if (!data) return null
+
+  const todayWeather: ITodayWeather = {
+    locationInfo: {
+      city: data.today.city,
+      main: data.today.main,
+      temperature: data.today.temperature,
+    },
+    weatherIcon: {
+      icon: data.today.icon,
+    },
+    feelsLike: {
+      feelsLike: data.today.feelsLike,
+    },
+    humidityInfo: {
+      humidity: data.today.humidity,
+    },
+    windInfo: {
+      wind: data.today.wind,
+    },
+  }
+
+  const additionalParams: IAdditionalParams = {
+    sunInfoCard: {
+      sunrise: data.today.sunrise,
+      sunset: data.today.sunset,
+    },
+    pressure: {
+      pressure: data.today.pressure,
+    },
+    uvIndex: {
+      uvIndex: data.today.uvIndex,
+    },
+  }
+
   return (
     <div className="App">
       <Header />
 
       <div className={theme === 'dark' ? 'night-bg' : 'day-bg'}>
-        <TodayWeather />
+        <TodayWeather arr={todayWeather} />
         <DailyForecast />
       </div>
-      <AdditionalParams />
+      <AdditionalParams arr={additionalParams} />
       {/* <WeatherChart /> */}
       <MoonPhases />
       <Footer />
