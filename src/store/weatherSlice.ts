@@ -19,17 +19,16 @@ export const fetchWeather = createAsyncThunk(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
       )
 
-      const { coord, main, weather, wind, sys, name } = weatherResponse.data
+      const { coord, main, weather, wind, sys, name, timezone } =
+        weatherResponse.data
       const { lat, lon } = coord
 
       //Запрос для УФ индекса
       const uvResponse = await axios.get(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=uv_index_max`
       )
-
       //Запрос на 5 дней
       //https://api.openweathermap.org/data/2.5/forecast?q=Moscow&cnt=32&units=metric&appid=API
-
       return {
         today: {
           city: name,
@@ -45,6 +44,7 @@ export const fetchWeather = createAsyncThunk(
           main: weather[0].main,
           description: weather[0].description,
           uvIndex: uvResponse.data.daily.uv_index_max[0],
+          timeZone: timezone,
         },
       } as IWeatherData
     } catch (error: any) {

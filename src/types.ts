@@ -26,6 +26,7 @@ export interface IWeatherData {
     pressure: number
     description: string
     uvIndex: number
+    timeZone: number
   }
 }
 
@@ -85,6 +86,7 @@ export interface IAdditionalParams {
   sunInfoCard: {
     sunrise: number | null
     sunset: number | null
+    timeZone: number | null
   }
   pressure: {
     pressure: number | null
@@ -98,8 +100,9 @@ export interface IAdditionalParamsProps {
   arr: IAdditionalParams
 }
 export interface ISunInfoCardProps {
-  sunrise: number | null
-  sunset: number | null
+  sunrise: string
+  sunset: string
+  cityTime: string
 }
 
 export interface IPressureProps {

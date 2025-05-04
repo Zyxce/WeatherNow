@@ -23,7 +23,7 @@ const TodayWeather: React.FC<ITodayWeatherProps> = (props) => {
       <div className={style.containerBottom}>
         <FeelsLike feelsLike={useRound(arr.feelsLike.feelsLike)} />
         <HumidityInfo humidity={arr.humidityInfo.humidity} />
-        <WindInfo wind={arr.windInfo.wind} />
+        <WindInfo wind={useRound(arr.windInfo.wind)} />
       </div>
     </section>
   )

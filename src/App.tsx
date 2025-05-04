@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch()
   useThemeAutoEffect()
   useEffect(() => {
-    dispatch(fetchWeather('Moscow'))
+    dispatch(fetchWeather('New york'))
   }, [dispatch])
 
   if (loading) return <p>Loading...</p>
@@ -48,6 +48,7 @@ const App: React.FC = () => {
     sunInfoCard: {
       sunrise: data.today.sunrise,
       sunset: data.today.sunset,
+      timeZone: data.today.timeZone,
     },
     pressure: {
       pressure: data.today.pressure,
