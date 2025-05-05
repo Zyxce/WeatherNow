@@ -13,7 +13,8 @@
     "pressure": "Pressure",
     "UV": "UV",
     "index": "index",
-    "sunrise": "Sunrise"
+    "sunrise": "Sunrise",
+    "sunset": "Sunset"
   },
   "moonPhase": {
     "moonday": "Day"

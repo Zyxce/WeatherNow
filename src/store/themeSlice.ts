@@ -1,4 +1,3 @@
-// themeSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { getThemeByTime } from '../utils/themeUtils'
 
@@ -24,9 +23,20 @@ const themeSlice = createSlice({
       state.theme = action.payload
       state.isAutoTheme = false
     },
-    setAutoTheme: (state) => {
+    setAutoTheme: (
+      state,
+      action: PayloadAction<{
+        sunrise?: number | null
+        sunset?: number | null
+        timeZone?: number | null
+      } | null>
+    ) => {
       state.isAutoTheme = true
-      state.theme = getThemeByTime()
+      state.theme = getThemeByTime(
+        action.payload?.sunrise ?? null,
+        action.payload?.sunset ?? null,
+        action.payload?.timeZone ?? null
+      )
     },
   },
 })

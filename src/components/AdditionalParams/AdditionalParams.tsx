@@ -6,7 +6,6 @@ import UVIndex from './UVIndex'
 import { IAdditionalParamsProps } from '../../types'
 import useRound from '../../hooks/useRound'
 import useFormattedTime from '../../hooks/useFormattedTime'
-import useCityTime from '../../hooks/useCityTime'
 
 const AdditionalParams: React.FC<IAdditionalParamsProps> = (props) => {
   const { arr } = props
@@ -21,7 +20,6 @@ const AdditionalParams: React.FC<IAdditionalParamsProps> = (props) => {
           arr.sunInfoCard.sunset,
           arr.sunInfoCard.timeZone
         )}
-        cityTime={useCityTime(arr.sunInfoCard.timeZone)}
       />
       <Pressure pressure={arr.pressure.pressure} />
       <UVIndex uvIndex={useRound(arr.uvIndex.uvIndex)} />

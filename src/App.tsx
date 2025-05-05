@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { useThemeAutoEffect } from './hooks/useThemeAutoEffect'
 import { useAppDispatch, useAppSelector } from './hooks/reduxHooks'
 import { fetchWeather } from './store/weatherSlice'
+import { setAutoTheme } from './store/themeSlice'
 import { ITodayWeather, IAdditionalParams } from './types'
 import Header from './components/Header/Header'
 import TodayWeather from './components/TodayWeather/TodayWeather'
@@ -13,13 +13,26 @@ import './styles/components/App.css'
 
 const App: React.FC = () => {
   const theme = useAppSelector((state) => state.theme.theme)
+  const isAutoTheme = useAppSelector((state) => state.theme.isAutoTheme)
   const { data, loading, error } = useAppSelector((state) => state.weather)
   const dispatch = useAppDispatch()
-  useThemeAutoEffect()
+
   useEffect(() => {
-    dispatch(fetchWeather('New york'))
+    dispatch(fetchWeather('Moscow'))
   }, [dispatch])
 
+  //настройка темы от времени суток в городе
+  useEffect(() => {
+    if (data?.today && isAutoTheme) {
+      dispatch(
+        setAutoTheme({
+          sunrise: data.today.sunrise,
+          sunset: data.today.sunset,
+          timeZone: data.today.timeZone,
+        })
+      )
+    }
+  }, [data, dispatch, isAutoTheme])
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   if (!data) return null
@@ -57,6 +70,13 @@ const App: React.FC = () => {
       uvIndex: data.today.uvIndex,
     },
   }
+
+  //проверка времени в городе при отладке
+  // const now = Math.floor(Date.now() / 1000)
+  // const cityNow = now + data.today.timeZone
+  // const timestamp = cityNow * 1000
+  // const date = new Date(timestamp)
+  // console.log(date.toUTCString())
 
   return (
     <div className="App">

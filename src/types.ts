@@ -102,7 +102,6 @@ export interface IAdditionalParamsProps {
 export interface ISunInfoCardProps {
   sunrise: string
   sunset: string
-  cityTime: string
 }
 
 export interface IPressureProps {
