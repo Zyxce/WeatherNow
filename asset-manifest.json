@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/WeatherNow/static/css/main.c510d8a6.css",
+    "main.js": "/WeatherNow/static/js/main.59bff868.js",
+    "static/media/day-bg.jpg": "/WeatherNow/static/media/day-bg.a48850d85622e1f636ad.jpg",
+    "static/media/night-bg.jpg": "/WeatherNow/static/media/night-bg.ee76365b605217c769a9.jpg",
+    "static/media/10d.svg": "/WeatherNow/static/media/10d.95fcaa8a5283ba130fb58fad94187087.svg",
+    "static/media/13n.svg": "/WeatherNow/static/media/13n.2f444653e5eae7e308af9bb86f41fe4e.svg",
+    "static/media/10n.svg": "/WeatherNow/static/media/10n.001bed6165daf5d807243527966d70cf.svg",
+    "static/media/11n.svg": "/WeatherNow/static/media/11n.4410e2bd7a8d410c26fc5a72216b2ab2.svg",
+    "static/media/11d.svg": "/WeatherNow/static/media/11d.8782364dcf2e6c30bdca5f2d78466e19.svg",
+    "static/media/9n.svg": "/WeatherNow/static/media/9n.b4dfe6191e2ae17adc91171a253282ab.svg",
+    "static/media/9d.svg": "/WeatherNow/static/media/9d.f7c7df5d13460e7d5aa362bbff21bb2b.svg",
+    "static/media/13d.svg": "/WeatherNow/static/media/13d.96be3db81f89bb44976a24b2cf4ccb08.svg",
+    "static/media/50n.svg": "/WeatherNow/static/media/50n.27a8e90a7f0ae400eff609d62ec20b4a.svg",
+    "static/media/50d.svg": "/WeatherNow/static/media/50d.933c14c0ada69288e189c3c6f1e4b450.svg",
+    "static/media/2d.svg": "/WeatherNow/static/media/2d.f76cd81d2169369b4b9d4d99b22e74b2.svg",
+    "static/media/1d.svg": "/WeatherNow/static/media/1d.58371ed5d7be2e9504ed031943564006.svg",
+    "static/media/weather-theme-light.svg": "/WeatherNow/static/media/weather-theme-light.52b54fb1e9f41c6920f579104be6a394.svg",
+    "static/media/2n.svg": "/WeatherNow/static/media/2n.f3d33f87efc5fdb9463ebc10f9dcd2b3.svg",
+    "static/media/weather-theme-dark.svg": "/WeatherNow/static/media/weather-theme-dark.06a40266f238c5aae0750bede7401eeb.svg",
+    "static/media/4n.svg": "/WeatherNow/static/media/4n.f9085d0f86d6f977a2b3bb5aae4d5191.svg",
+    "static/media/4d.svg": "/WeatherNow/static/media/4d.e28d0c9471acb5e5244be3addc98fe3c.svg",
+    "index.html": "/WeatherNow/index.html",
+    "static/media/1n.svg": "/WeatherNow/static/media/1n.6198a069adbb9194ab98fc31e5e1e373.svg",
+    "static/media/3d.svg": "/WeatherNow/static/media/3d.31c28bb1541b3f3cd0a8e802ea15b5f4.svg",
+    "static/media/3n.svg": "/WeatherNow/static/media/3n.0713ea239f701b6df3b46470bb06f5d0.svg",
+    "static/media/weather-logo-dark.svg": "/WeatherNow/static/media/weather-logo-dark.664b37e8cd33d16d8d6b99876f86f055.svg",
+    "static/media/weather-logo-light.svg": "/WeatherNow/static/media/weather-logo-light.bbc75ce4614fb297fe5fe6d38afe4bf9.svg",
+    "main.c510d8a6.css.map": "/WeatherNow/static/css/main.c510d8a6.css.map",
+    "main.59bff868.js.map": "/WeatherNow/static/js/main.59bff868.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c510d8a6.css",
+    "static/js/main.59bff868.js"
+  ]
+}
