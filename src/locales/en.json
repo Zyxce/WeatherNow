@@ -16,10 +16,27 @@
     "sunrise": "Sunrise",
     "sunset": "Sunset"
   },
-  "moonPhase": {
-    "moonday": "Day"
-  },
   "footer": {
     "developedBy": "Developed By"
+  },
+  "dayOfWeek": {
+    "monday": "monday",
+    "tuesday": "tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "moonPhase": {
+    "moonday": "Day",
+    "newMoon": "New Moon",
+    "waxingCrescent": "Waxing Crescent",
+    "firstQuater": "First Quarter",
+    "waxingGibbous": "Waxing Gibbous",
+    "fullMoon": "Full Moon",
+    "waningGibbous": "Waning Gibbous",
+    "lastQuarter": "Last Quarter",
+    "waningCrescent": "Waning Crescent"
   }
 }

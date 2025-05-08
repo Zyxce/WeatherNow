@@ -1,15 +1,20 @@
 import React from 'react'
 import style from '../../styles/components/DailyForecast/DailyForecast.module.css'
 import ForecastCard from './ForecastCard'
-import { ICard } from '../../types'
-import foreCastArr from '../../data/dailyForecastData.json'
+import { IForecastDay, IDailyForecastProps } from '../../types'
 
-const DailyForecast: React.FC = () => {
-  const arr: ICard[] = foreCastArr
+const DailyForecast: React.FC<IDailyForecastProps> = ({ arr }) => {
   return (
     <div className={style.container}>
-      {arr.map((item: ICard, index: number) => (
-        <ForecastCard key={index} {...item} />
+      {arr.map((item: IForecastDay, index: number) => (
+        <ForecastCard
+          key={index}
+          dayOfWeek={item.dayOfWeek}
+          dayTemp={item.dayTemp}
+          nightTemp={item.nightTemp}
+          dayIcon={item.dayIcon}
+          nightIcon={item.nightIcon}
+        />
       ))}
     </div>
   )

@@ -7,6 +7,36 @@
     "feelsLike": "Ощущается",
     "humidity": "Влажность",
     "wind": "Ветер",
-    "ms": "m/s"
+    "ms": "м/с"
+  },
+  "additionalParams": {
+    "pressure": "Давление",
+    "UV": "УФ",
+    "index": "индекс",
+    "sunrise": "Восход",
+    "sunset": "Закат"
+  },
+  "footer": {
+    "developedBy": "Разработано"
+  },
+  "dayOfWeek": {
+    "monday": "Понедельник",
+    "tuesday": "Вторник",
+    "wednesday": "Среда",
+    "thursday": "Четверг",
+    "friday": "Пятница",
+    "saturday": "Суббота",
+    "sunday": "Воскресенье"
+  },
+  "moonPhase": {
+    "moonday": "День",
+    "newMoon": "Новолуние",
+    "waxingCrescent": "Растущий серп",
+    "firstQuater": "Первая четверть",
+    "waxingGibbous": "Растущая луна",
+    "fullMoon": "Полнолуние",
+    "waningGibbous": "Убывающая луна",
+    "lastQuarter": "Последняя четверть",
+    "waningCrescent": "Убывающий серп"
   }
 }

@@ -15,7 +15,7 @@ const TodayWeather: React.FC<ITodayWeatherProps> = (props) => {
       <div className={style.containerTop}>
         <LocationInfo
           city={arr.locationInfo.city}
-          main={arr.locationInfo.main}
+          description={arr.locationInfo.description}
           temperature={useRound(arr.locationInfo.temperature)}
         />
         <WeatherIcon icon={arr.weatherIcon.icon} />

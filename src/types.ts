@@ -1,16 +1,3 @@
-export interface ICard {
-  day: string
-  weather: string
-  temperature: number
-  feelsLike: number
-  humidity: number
-  wind: number
-  uvIndex: number
-  sunrise: string
-  sunset: string
-  pressure: number
-}
-
 export interface IWeatherData {
   today: {
     city: string
@@ -28,6 +15,8 @@ export interface IWeatherData {
     uvIndex: number
     timeZone: number
   }
+  forecast: IForecastDay[]
+  moonPhases: IMoonPhaseData[]
 }
 
 export interface IWeatherState {
@@ -39,7 +28,7 @@ export interface IWeatherState {
 export interface ITodayWeather {
   locationInfo: {
     city: string | null
-    main: string | null
+    description: string | null
     temperature: number | null
   }
   weatherIcon: {
@@ -61,7 +50,7 @@ export interface ITodayWeatherProps {
 
 export interface ILocationInfoProps {
   city: string | null
-  main: string | null
+  description: string | null
   temperature: number | null
 }
 
@@ -111,9 +100,44 @@ export interface IPressureProps {
 export interface IUVIndexProps {
   uvIndex: number | null
 }
+//Daily Forecast
+export interface IForecastDay {
+  dayOfWeek: string
+  dayTemp: number
+  nightTemp: number
+  dayIcon: string
+  nightIcon: string
+  dayDescription: string
+  nightDescription: string
+}
 
-export interface IMoon {
-  day: string
-  moonDay: number
-  phase: string
+export interface IDailyForecastProps {
+  arr: IForecastDay[]
+}
+
+export interface IForeCastCardProps {
+  dayOfWeek: string
+  dayTemp: number
+  nightTemp: number
+  dayIcon: string
+  nightIcon: string
+}
+//Moon
+export interface IMoonPhaseData {
+  date: string
+  phaseName: string
+  phaseIcon: string
+  age: number
+  sunrise: string
+  sunset: string
+}
+
+export interface IMoonPhasesProps {
+  arr: IMoonPhaseData[]
+}
+export interface IMoonPhaseCardProps {
+  date: string
+  phaseName: string
+  phaseIcon: string
+  age: number
 }

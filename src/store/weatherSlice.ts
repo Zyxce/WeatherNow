@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { IWeatherData, IWeatherState } from '../types'
+import { processForecastData, getMoonData } from '../utils/weatherUtils'
 
 const initialState: IWeatherState = {
   data: null,
@@ -10,13 +11,16 @@ const initialState: IWeatherState = {
 
 export const fetchWeather = createAsyncThunk(
   'weather/fetchWeather',
-  async (city: string, { rejectWithValue }) => {
+  async (
+    { city, lang }: { city: string; lang: string },
+    { rejectWithValue }
+  ) => {
     const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY
 
     try {
       //Основной запрос, тут также координаты для уф индекса и луны
       const weatherResponse = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=${lang}`
       )
 
       const { coord, main, weather, wind, sys, name, timezone } =
@@ -28,7 +32,10 @@ export const fetchWeather = createAsyncThunk(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=uv_index_max`
       )
       //Запрос на 5 дней
-      //https://api.openweathermap.org/data/2.5/forecast?q=Moscow&cnt=32&units=metric&appid=API
+      const forecastResponse = await axios.get(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+      )
+
       return {
         today: {
           city: name,
@@ -46,6 +53,8 @@ export const fetchWeather = createAsyncThunk(
           uvIndex: uvResponse.data.daily.uv_index_max[0],
           timeZone: timezone,
         },
+        forecast: processForecastData(forecastResponse.data.list, timezone),
+        moonPhases: getMoonData(lat, lon, timezone),
       } as IWeatherData
     } catch (error: any) {
       if (error.response?.data?.message) {

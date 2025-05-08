@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from './hooks/reduxHooks'
 import { fetchWeather } from './store/weatherSlice'
 import { setAutoTheme } from './store/themeSlice'
-import { ITodayWeather, IAdditionalParams } from './types'
+import {
+  ITodayWeather,
+  IAdditionalParams,
+  IForecastDay,
+  IMoonPhaseData,
+} from './types'
 import Header from './components/Header/Header'
 import TodayWeather from './components/TodayWeather/TodayWeather'
 import AdditionalParams from './components/AdditionalParams/AdditionalParams'
@@ -12,14 +17,21 @@ import Footer from './components/Footer/Footer'
 import './styles/components/App.css'
 
 const App: React.FC = () => {
+  const language = useAppSelector((state) => state.language.language)
   const theme = useAppSelector((state) => state.theme.theme)
+  const city = useAppSelector((state) => state.search.city)
   const isAutoTheme = useAppSelector((state) => state.theme.isAutoTheme)
   const { data, loading, error } = useAppSelector((state) => state.weather)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(fetchWeather('Moscow'))
-  }, [dispatch])
+    dispatch(
+      fetchWeather({
+        city: city,
+        lang: language,
+      })
+    )
+  }, [dispatch, city, language])
 
   //настройка темы от времени суток в городе
   useEffect(() => {
@@ -40,7 +52,7 @@ const App: React.FC = () => {
   const todayWeather: ITodayWeather = {
     locationInfo: {
       city: data.today.city,
-      main: data.today.main,
+      description: data.today.description,
       temperature: data.today.temperature,
     },
     weatherIcon: {
@@ -71,6 +83,10 @@ const App: React.FC = () => {
     },
   }
 
+  const forecastArray: IForecastDay[] = data.forecast || []
+
+  const moonPhasesArray: IMoonPhaseData[] = data.moonPhases || []
+
   //проверка времени в городе при отладке
   // const now = Math.floor(Date.now() / 1000)
   // const cityNow = now + data.today.timeZone
@@ -84,11 +100,11 @@ const App: React.FC = () => {
 
       <div className={theme === 'dark' ? 'night-bg' : 'day-bg'}>
         <TodayWeather arr={todayWeather} />
-        <DailyForecast />
+        <DailyForecast arr={forecastArray} />
       </div>
       <AdditionalParams arr={additionalParams} />
       {/* <WeatherChart /> */}
-      <MoonPhases />
+      <MoonPhases arr={moonPhasesArray} />
       <Footer />
     </div>
   )
