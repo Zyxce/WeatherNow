@@ -3,7 +3,8 @@ import { ISunInfoCardProps } from '../../types'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../hooks/reduxHooks'
 import style from '../../styles/components/AdditionalParams/SunInfoCard.module.css'
-import testIcon from '../../assets/icons/weather-theme-light.svg'
+import sunriseIcon from '../../assets/icons/sunrise.svg'
+import sunsetIcon from '../../assets/icons/sunset.svg'
 
 const SunInfoCard: React.FC<ISunInfoCardProps> = (props) => {
   const { t } = useTranslation()
@@ -22,7 +23,11 @@ const SunInfoCard: React.FC<ISunInfoCardProps> = (props) => {
           <span></span>
         </p>
       </div>
-      <img src={testIcon} alt={'sun'} className={style.icon}></img>
+      <img
+        src={theme === 'dark' ? sunriseIcon : sunsetIcon}
+        alt={'sun'}
+        className={style.icon}
+      ></img>
     </div>
   )
 }

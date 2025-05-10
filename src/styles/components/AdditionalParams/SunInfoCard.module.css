@@ -2,9 +2,10 @@
   display: flex;
   background-color: var(--color-card);
   border-radius: 0.5rem;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem 0rem 0.5rem 0.6rem;
 }
 .card .left {
+  border: 1px solid green;
   text-align: start;
   padding-right: 0.3rem;
 }
@@ -18,7 +19,8 @@
   font-size: 0.8rem;
 }
 .card .icon {
+  border: 1px solid red;
   margin: 0 auto;
   margin-top: auto;
-  width: 2.2rem;
+  width: 3rem;
 }/*# sourceMappingURL=SunInfoCard.module.css.map */

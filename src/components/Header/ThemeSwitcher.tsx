@@ -16,11 +16,18 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <button className={style.switcher} onClick={() => dispatch(toggleTheme())}>
-      <img
+      {/* <img
         className={style.icon}
         src={theme === 'dark' ? iconLight : iconDark}
         alt="Theme icon"
-      />
+      /> */}
+      <div
+        className={
+          theme === 'dark'
+            ? `${style.icon} ${style.iconDark}`
+            : `${style.icon} ${style.iconLight}`
+        }
+      ></div>
     </button>
   )
 }
