@@ -1,0 +1,34 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-card);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+}
+.card .time {
+  font-size: 0.8rem;
+}
+.card .icon {
+  width: 2rem;
+}
+.card .temperature {
+  font-size: 1.2rem;
+}
+.card .temperature span {
+  margin-left: 0.15rem;
+}
+.card .humidity {
+  display: flex;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  color: var(--color-text-secondary);
+  align-items: center;
+}
+.card .humidity img {
+  width: 1rem;
+}
+.card .humidity span {
+  font-size: 0.8rem;
+}/*# sourceMappingURL=HourlyForecastCard.module.css.map */

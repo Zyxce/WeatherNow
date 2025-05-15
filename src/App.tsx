@@ -7,11 +7,14 @@ import {
   IAdditionalParams,
   IForecastDay,
   IMoonPhaseData,
+  IForecast24h,
 } from './types'
 import Header from './components/Header/Header'
 import TodayWeather from './components/TodayWeather/TodayWeather'
+import HourlyForecast from './components/HourlyForecast/HourlyForecast'
 import AdditionalParams from './components/AdditionalParams/AdditionalParams'
 import DailyForecast from './components/DailyForecast/DailyForecast'
+import MoonToday from './components/MoonToday/MoonToday'
 import MoonPhases from './components/MoonPhases/MoonPhases'
 import Footer from './components/Footer/Footer'
 import './styles/components/App.css'
@@ -83,9 +86,13 @@ const App: React.FC = () => {
     },
   }
 
+  const forecast24hArray: IForecast24h[] = data.forecast24h || []
+
   const forecastArray: IForecastDay[] = data.forecast || []
 
-  const moonPhasesArray: IMoonPhaseData[] = data.moonPhases || []
+  const moonPhasesArray: IMoonPhaseData[] = data.moonPhases.slice(1, 5) || []
+
+  const moonTodayArray: IMoonPhaseData[] = data.moonPhases.slice(0, 1) || []
 
   //проверка времени в городе при отладке
   // const now = Math.floor(Date.now() / 1000)
@@ -94,16 +101,19 @@ const App: React.FC = () => {
   // const date = new Date(timestamp)
   // console.log(date.toUTCString())
 
+  console.log('Forecast24h data:', data.forecast24h)
   return (
     <div className="App">
       <Header />
 
       <div className={theme === 'dark' ? 'night-bg' : 'day-bg'}>
         <TodayWeather arr={todayWeather} />
+        <HourlyForecast arr={forecast24hArray} />
+        <AdditionalParams arr={additionalParams} />
         <DailyForecast arr={forecastArray} />
       </div>
-      <AdditionalParams arr={additionalParams} />
       {/* <WeatherChart /> */}
+      <MoonToday arr={moonTodayArray} />
       <MoonPhases arr={moonPhasesArray} />
       <Footer />
     </div>

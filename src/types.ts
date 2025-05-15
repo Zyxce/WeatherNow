@@ -16,6 +16,7 @@ export interface IWeatherData {
     timeZone: number
   }
   forecast: IForecastDay[]
+  forecast24h: IForecast24h[]
   moonPhases: IMoonPhaseData[]
 }
 
@@ -100,6 +101,17 @@ export interface IPressureProps {
 export interface IUVIndexProps {
   uvIndex: number | null
 }
+//24h Forecast
+export interface IForecast24h {
+  time: string
+  temperature: number
+  humidity: number
+  weathercode: number
+}
+
+export interface IForecast24hProps {
+  arr: IForecast24h[]
+}
 //Daily Forecast
 export interface IForecastDay {
   dayOfWeek: string
@@ -134,6 +146,21 @@ export interface IMoonPhaseData {
 
 export interface IMoonPhasesProps {
   arr: IMoonPhaseData[]
+}
+
+export interface IMoonTodayProps {
+  arr: IMoonPhaseData[]
+}
+
+export interface IMoonInfoProps {
+  phaseName: string
+  phaseIcon: string
+  age: number
+}
+
+export interface IMoonSetProps {
+  type: string
+  time: string
 }
 export interface IMoonPhaseCardProps {
   date: string

@@ -20,8 +20,9 @@
     "developedBy": "Developed By"
   },
   "dayOfWeek": {
-    "monday": "monday",
-    "tuesday": "tuesday",
+    "today": "Today",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
     "wednesday": "Wednesday",
     "thursday": "Thursday",
     "friday": "Friday",

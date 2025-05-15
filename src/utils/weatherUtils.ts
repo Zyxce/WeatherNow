@@ -1,4 +1,4 @@
-import { IForecastDay, IMoonPhaseData } from '../types'
+import { IForecastDay, IMoonPhaseData, IForecast24h } from '../types'
 import { getMoonIllumination, getMoonTimes } from 'suncalc'
 //обработка данных на 5 дней
 export const processForecastData = (
@@ -51,7 +51,49 @@ export const processForecastData = (
   })
 }
 
-/// получение фаз лун на 4 дня
+export const getHourlyForecast = (
+  hourly: {
+    time: string[]
+    temperature_2m: number[]
+    relativehumidity_2m: number[]
+    weathercode: number[]
+  },
+  utcOffsetSeconds: number
+): IForecast24h[] => {
+  if (!hourly?.time?.length) return [] // Проверка наличия данных
+
+  const nowUTC = new Date()
+  const localTime = new Date(nowUTC.getTime() + utcOffsetSeconds * 1000)
+
+  // Следующий полный час в ЛОКАЛЬНОМ времени города
+  const nextHour = new Date(localTime)
+  nextHour.setHours(nextHour.getHours() + 1, 0, 0, 0)
+
+  // Конвертируем в UTC для поиска
+  const searchUTCTime = new Date(nextHour.getTime() - utcOffsetSeconds * 1000)
+  const searchTime = searchUTCTime.toISOString().slice(0, 13) + ':00'
+
+  const startIndex = hourly.time.findIndex((t) => t === searchTime)
+  if (startIndex === -1) return []
+
+  return hourly.time.slice(startIndex, startIndex + 24).map((time, index) => ({
+    time: new Date(time + 'Z')
+      .toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: `Etc/GMT${utcOffsetSeconds >= 0 ? '-' : '+'}${Math.abs(
+          utcOffsetSeconds / 3600
+        )}`,
+      })
+      .replace(':', ''),
+    temperature: hourly.temperature_2m[startIndex + index],
+    humidity: hourly.relativehumidity_2m[startIndex + index],
+    weathercode: hourly.weathercode[startIndex + index],
+  }))
+}
+
+/// получение фаз лун на 5 дня
 export const getMoonData = (
   lat: number,
   lon: number,
@@ -59,14 +101,14 @@ export const getMoonData = (
 ): IMoonPhaseData[] => {
   const moonPhases: IMoonPhaseData[] = []
 
-  for (let i = 1; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     const date = new Date(Date.now() + i * 86400000 + timezoneOffset * 1000)
     const moon = getMoonIllumination(date)
     const moonTimes = getMoonTimes(date, lat, lon)
 
     //возраст луны от 0 до 1
     const moonAge = Math.floor(moon.phase * 29.53) //29.53 дня в лунном цикле
-
+    console.log(moon.phase)
     moonPhases.push({
       date: date.toLocaleDateString('en', { weekday: 'long' }),
       phaseName: getPhaseName(moon.phase),
@@ -88,25 +130,28 @@ export const getMoonData = (
   return moonPhases
 }
 
-// меняет фазу в название фазы
 const getPhaseName = (phase: number): string => {
-  if (phase < 0.125) return 'New Moon'
-  if (phase < 0.25) return 'Waxing Crescent'
-  if (phase < 0.375) return 'First Quarter'
-  if (phase < 0.625) return 'Waxing Gibbous'
-  if (phase < 0.75) return 'Full Moon'
-  if (phase < 0.875) return 'Waning Gibbous'
-  if (phase < 0.9375) return 'Last Quarter'
-  return 'Waning Crescent'
+  if (phase <= 0.111 && phase >= 0) return 'New Moon'
+  if (phase <= 0.222 && phase >= 0.112) return 'Waxing Crescent'
+  if (phase <= 0.333 && phase >= 0.223) return 'First Quarter'
+  if (phase <= 0.444 && phase >= 0.334) return 'Waxing Gibbous'
+  if (phase <= 0.555 && phase >= 0.445) return 'Full Moon'
+  if (phase <= 0.666 && phase >= 0.556) return 'Waning Gibbous'
+  if (phase <= 0.777 && phase >= 0.667) return 'Last Quarter'
+  if (phase <= 0.888 && phase >= 0.778) return 'Waning Crescent'
+  if (phase <= 1 && phase >= 0.889) return 'New Moon'
+  return 'N/A'
 }
-// меняет фазу в код картинки для фазы
+
 const getPhaseIcon = (phase: number): string => {
-  if (phase < 0.125) return '1m'
-  if (phase < 0.25) return '2m'
-  if (phase < 0.375) return '3m'
-  if (phase < 0.625) return '4m'
-  if (phase < 0.75) return '5m'
-  if (phase < 0.875) return '6m'
-  if (phase < 0.9375) return '7m'
-  return '8m'
+  if (phase <= 0.111 && phase >= 0) return '1m'
+  if (phase <= 0.222 && phase >= 0.112) return '2m'
+  if (phase <= 0.333 && phase >= 0.223) return '3m'
+  if (phase <= 0.444 && phase >= 0.334) return '4m'
+  if (phase <= 0.555 && phase >= 0.445) return '5m'
+  if (phase <= 0.666 && phase >= 0.556) return '8m'
+  if (phase <= 0.777 && phase >= 0.667) return '7m'
+  if (phase <= 0.888 && phase >= 0.778) return '6m'
+  if (phase <= 1 && phase >= 0.889) return '1m'
+  return 'N/A'
 }

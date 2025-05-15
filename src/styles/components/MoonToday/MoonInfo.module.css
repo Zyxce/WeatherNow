@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  background-color: var(--color-card);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+}
+.card .left {
+  text-align: start;
+  padding-right: 0.3rem;
+}
+.card .left .type {
+  font-size: 0.8rem;
+}
+.card .left .time {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+.card .left .time span {
+  font-size: 0.5rem;
+}
+.card .icon {
+  margin: 0 auto;
+  margin-top: auto;
+  width: 3rem;
+}/*# sourceMappingURL=MoonInfo.module.css.map */

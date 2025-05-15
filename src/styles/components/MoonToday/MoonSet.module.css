@@ -1,0 +1,21 @@
+.card {
+  background-color: var(--color-card);
+  border-radius: 0.5rem;
+  text-align: start;
+  padding: 0.5rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .text {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.card .param {
+  text-align: center;
+}
+.card .param span {
+  text-align: center;
+  margin-left: 0.3rem;
+  font-size: 0.7rem;
+}/*# sourceMappingURL=MoonSet.module.css.map */

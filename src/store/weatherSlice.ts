@@ -1,7 +1,11 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { IWeatherData, IWeatherState } from '../types'
-import { processForecastData, getMoonData } from '../utils/weatherUtils'
+import {
+  processForecastData,
+  getMoonData,
+  getHourlyForecast,
+} from '../utils/weatherUtils'
 
 const initialState: IWeatherState = {
   data: null,
@@ -36,6 +40,20 @@ export const fetchWeather = createAsyncThunk(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
       )
 
+      //Запрос на 48часа
+      const forecast24hResponse = await axios.get(
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,weathercode&timezone=auto&forecast_days=2`
+      )
+
+      const { hourly } = forecast24hResponse.data
+      const { time, temperature_2m, relativehumidity_2m, weathercode } = hourly
+      const hourlyData = {
+        time,
+        temperature_2m,
+        relativehumidity_2m,
+        weathercode,
+      }
+
       return {
         today: {
           city: name,
@@ -54,6 +72,7 @@ export const fetchWeather = createAsyncThunk(
           timeZone: timezone,
         },
         forecast: processForecastData(forecastResponse.data.list, timezone),
+        forecast24h: getHourlyForecast(hourlyData, timezone),
         moonPhases: getMoonData(lat, lon, timezone),
       } as IWeatherData
     } catch (error: any) {
