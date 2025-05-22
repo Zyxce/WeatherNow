@@ -1,0 +1,68 @@
+.animContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.animContainer .animMoon {
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  top: 25%;
+  left: 30%;
+  animation: animMoon 8s infinite ease-in-out;
+  transform-origin: center;
+}
+.animContainer .animFogSmall {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 58%;
+  left: -10%;
+  animation: animFogSmall 20s infinite linear;
+  opacity: 0;
+  transform-origin: center;
+  z-index: 3;
+}
+
+@keyframes animMoon {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg) translateX(0rem) translateY(0rem);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(5deg) translateX(0rem) translateY(0.5rem);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-10deg) translateX(0rem) translateY(0rem);
+  }
+}
+@keyframes animFogSmall {
+  0% {
+    transform: translate(-50%, -50%) translateY(0.15rem) scale(100%);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(30%, -50%) translateY(-0.15rem) scale(90%);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(90%, -50%) translateY(0.15rem) scale(100%);
+    opacity: 1;
+  }
+  45% {
+    transform: translate(150%, -50%) translateY(-0.15rem) scale(110%);
+  }
+  60% {
+    transform: translate(200%, -50%) translateY(0.15rem) scale(115%);
+  }
+  75% {
+    transform: translate(250%, -50%) translateY(-0.15rem) scale(100%);
+  }
+  90% {
+    transform: translate(300%, -50%) translateY(0.15rem) scale(105%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(950%, -50%) translateY(0.15rem) scale(100%);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=LowNight.module.css.map */

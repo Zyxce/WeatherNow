@@ -1,0 +1,43 @@
+.animContainer
+    position: relative
+    width: 100%
+    height: 100%
+
+    .animSun
+        position: absolute
+        top: 25%
+        left: 25%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .sunMain
+        width: 2rem
+        z-index: 4
+        opacity: 1
+
+    .sunFirstGradient
+        width: 2.3rem
+        z-index: 3
+        animation: fadeInOut 6s infinite ease-in-out
+
+    .sunSecondGradient
+        width: 2.6rem
+        z-index: 2
+        animation: fadeInOut 6s infinite 1s ease-in-out
+
+    .sunLastGradient
+        width: 2.9rem
+        z-index: 1
+        animation: fadeInOut 6s infinite 2s ease-in-out
+
+@keyframes fadeInOut
+    0%
+        opacity: 0
+    20%
+        opacity: 1
+    60%
+        opacity: 1
+    80%
+        opacity: 0
+    100%
+        opacity: 0

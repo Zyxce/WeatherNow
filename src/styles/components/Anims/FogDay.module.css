@@ -1,0 +1,102 @@
+.animContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.animContainer .fog {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.animContainer .fog1 {
+  animation: fogMoveLeft 30s infinite linear;
+  left: 0;
+}
+.animContainer .fog2 {
+  animation: fogMoveRight 30s infinite linear;
+  right: 0;
+}
+.animContainer .fog3 {
+  animation: fogMoveLeft 30s infinite linear;
+  left: 0;
+}
+.animContainer .fog4 {
+  animation: fogMoveRight 30s infinite linear;
+  right: 0;
+}
+.animContainer .cloneleft {
+  left: 100%;
+}
+.animContainer .cloneright {
+  left: -100%;
+}
+.animContainer .animSun {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.animContainer .sunMain {
+  width: 2rem;
+  z-index: 4;
+  opacity: 1;
+}
+.animContainer .sunFirstGradient {
+  width: 2.3rem;
+  z-index: 3;
+  animation: fadeInOut 6s infinite ease-in-out;
+}
+.animContainer .sunSecondGradient {
+  width: 2.6rem;
+  z-index: 2;
+  animation: fadeInOut 6s infinite 1s ease-in-out;
+}
+.animContainer .sunLastGradient {
+  width: 2.9rem;
+  z-index: 1;
+  animation: fadeInOut 6s infinite 2s ease-in-out;
+}
+
+@keyframes fogMoveRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+@keyframes fogMoveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=fogDay.module.css.map */

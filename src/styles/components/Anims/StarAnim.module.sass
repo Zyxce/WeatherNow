@@ -1,0 +1,145 @@
+.animContainer
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+
+    .animStar1
+        position: absolute
+        top: 100%
+        left: 60%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar1
+        width: 0.3rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar1
+        width: 0.6rem
+        z-index: 3
+        animation: fadeInOut 9s infinite ease-in-out
+
+    .beamStar1
+        width: 1.2rem
+        z-index: 2
+        animation: fadeInOut 9s infinite 1s ease-in-out
+
+    .animStar2
+        position: absolute
+        top: 0%
+        left: 0%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar2
+        width: 0.25rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar2
+        width: 0.5rem
+        z-index: 3
+        animation: fadeInOut 6s infinite ease-in-out
+
+    .beamStar2
+        width: 1rem
+        z-index: 2
+        animation: fadeInOut 6s infinite 1s ease-in-out, beamRotate 6s infinite linear
+
+    .animStar3
+        position: absolute
+        top: 78%
+        left: 18%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar3
+        width: 0.15rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar3
+        width: 0.3rem
+        z-index: 3
+        animation: fadeInOut 4s infinite ease-in-out
+
+    .beamStar3
+        width: 0.6rem
+        z-index: 2
+        animation: fadeInOut 4s infinite 1s ease-in-out
+
+    .animStar4
+        position: absolute
+        top: 38%
+        left: 68%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar4
+        width: 0.15rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar4
+        width: 0.3rem
+        z-index: 3
+        animation: fadeInOut 5s infinite ease-in-out
+
+    .beamStar4
+        width: 0.6rem
+        z-index: 2
+        animation: fadeInOut 5s infinite 1s ease-in-out
+
+    .animStar5
+        position: absolute
+        top: 8%
+        left: 88%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar5
+        width: 0.15rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar5
+        width: 0.3rem
+        z-index: 3
+        animation: fadeInOut 5.5s infinite ease-in-out
+
+    .animStar6
+        position: absolute
+        top: 38%
+        left: 8%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+    .mainStar6
+        width: 0.1rem
+        z-index: 4
+        opacity: 1
+
+    .gradientStar6
+        width: 0.2rem
+        z-index: 3
+        animation: fadeInOut 7s infinite ease-in-out
+
+@keyframes fadeInOut
+    0%
+        opacity: 0
+    20%
+        opacity: 1
+    60%
+        opacity: 1
+    80%
+        opacity: 0
+    100%
+        opacity: 0
+
+@keyframes beamRotate
+    from
+        transform: translate(-50%, -50%) rotate(0deg)
+    to
+        transform: translate(-50%, -50%) rotate(360deg)

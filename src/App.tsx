@@ -110,9 +110,9 @@ const App: React.FC = () => {
         <TodayWeather arr={todayWeather} />
         <HourlyForecast arr={forecast24hArray} />
         <AdditionalParams arr={additionalParams} />
-        <DailyForecast arr={forecastArray} />
       </div>
       {/* <WeatherChart /> */}
+      <DailyForecast arr={forecastArray} />
       <MoonToday arr={moonTodayArray} />
       <MoonPhases arr={moonPhasesArray} />
       <Footer />

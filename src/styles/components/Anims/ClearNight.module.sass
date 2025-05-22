@@ -1,0 +1,22 @@
+
+.animContainer
+    height: 100%
+    width: 100%
+    position: relative
+
+    .animMoon
+        position: absolute
+        width: 1.8rem
+        height: 1.8rem
+        top: 25%
+        left: 30%
+        animation: animMoon 8s infinite ease-in-out
+        transform-origin: center
+
+@keyframes animMoon
+    0%
+        transform: translate(-50%, -50%) rotate(-10deg) translateX(0rem) translateY(0rem)
+    50%
+        transform: translate(-50%, -50%) rotate(5deg) translateX(0rem) translateY(0.5rem)
+    100%
+        transform: translate(-50%, -50%) rotate(-10deg) translateX(0rem) translateY(0rem)

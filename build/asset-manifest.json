@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/WeatherNow/static/css/main.d5894ec7.css",
-    "main.js": "/WeatherNow/static/js/main.1ebc8332.js",
+    "main.css": "/WeatherNow/static/css/main.6f8e613c.css",
+    "main.js": "/WeatherNow/static/js/main.6b70012a.js",
     "static/media/day-bg.jpg": "/WeatherNow/static/media/day-bg.a48850d85622e1f636ad.jpg",
     "static/media/night-bg.jpg": "/WeatherNow/static/media/night-bg.ee76365b605217c769a9.jpg",
     "static/media/8m.svg": "/WeatherNow/static/media/8m.161457e5e64f94302b94aedb64be9c0e.svg",
@@ -41,11 +41,11 @@
     "static/media/weather-logo-light.svg": "/WeatherNow/static/media/weather-logo-light.bbc75ce4614fb297fe5fe6d38afe4bf9.svg",
     "static/media/1hn.svg": "/WeatherNow/static/media/1hn.8e36e9f032a49b0df2c8457c8dcb9ff2.svg",
     "static/media/1hd.svg": "/WeatherNow/static/media/1hd.bae47e8cdc33ddac86f464f4bcaef8f4.svg",
-    "main.d5894ec7.css.map": "/WeatherNow/static/css/main.d5894ec7.css.map",
-    "main.1ebc8332.js.map": "/WeatherNow/static/js/main.1ebc8332.js.map"
+    "main.6f8e613c.css.map": "/WeatherNow/static/css/main.6f8e613c.css.map",
+    "main.6b70012a.js.map": "/WeatherNow/static/js/main.6b70012a.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5894ec7.css",
-    "static/js/main.1ebc8332.js"
+    "static/css/main.6f8e613c.css",
+    "static/js/main.6b70012a.js"
   ]
 }

@@ -59,6 +59,10 @@ export interface IWeatherIconProps {
   icon: string
 }
 
+export interface IWeatherAnimProps {
+  icon: string
+}
+
 export interface IFeelsLikeProps {
   feelsLike: number | null
 }
